@@ -55,9 +55,19 @@ public class LinkManager : ILinkManager
         try
         {
             if (Directory.Exists(targetPath))
+            {
+                var dirInfo = new DirectoryInfo(targetPath);
+                if (!dirInfo.Attributes.HasFlag(FileAttributes.ReparsePoint))
+                    return false;
                 Directory.Delete(targetPath);
+            }
             else if (File.Exists(targetPath))
+            {
+                var fileInfo = new FileInfo(targetPath);
+                if (!fileInfo.Attributes.HasFlag(FileAttributes.ReparsePoint))
+                    return false;
                 File.Delete(targetPath);
+            }
 
             return true;
         }
