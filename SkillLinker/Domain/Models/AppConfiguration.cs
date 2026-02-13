@@ -13,7 +13,7 @@ public record AppConfiguration(
         Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), ".config", "skill-linker", "skills");
 
     public static string DefaultOpencodeSkillsPath =>
-        Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), ".opencode", "skills");
+        Path.Combine(Directory.GetCurrentDirectory(), ".opencode", "skills");
 
     public static string DefaultConfigFilePath =>
         Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), ".config", "skill-linker", "config.json");
