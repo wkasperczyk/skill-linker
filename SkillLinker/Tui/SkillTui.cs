@@ -81,7 +81,7 @@ public class SkillTui
 
         AnsiConsole.Write(table);
         AnsiConsole.WriteLine();
-        AnsiConsole.Ask<string>("Press [Enter] to continue...");
+        AnsiConsole.Ask<string>("Press [[Enter]] to continue...");
 
         return Task.CompletedTask;
     }
@@ -93,7 +93,7 @@ public class SkillTui
         if (!unlinkedSkills.Any())
         {
             AnsiConsole.MarkupLine("[yellow]No skills available to enable.[/]");
-            AnsiConsole.Ask<string>("Press [Enter] to continue...");
+            AnsiConsole.Ask<string>("Press [[Enter]] to continue...");
             return;
         }
 
@@ -114,7 +114,7 @@ public class SkillTui
         }
 
         await Task.CompletedTask;
-        AnsiConsole.Ask<string>("Press [Enter] to continue...");
+        AnsiConsole.Ask<string>("Press [[Enter]] to continue...");
     }
 
     private async Task DisableSkillAsync(List<Skill> skills)
@@ -124,7 +124,7 @@ public class SkillTui
         if (!linkedSkills.Any())
         {
             AnsiConsole.MarkupLine("[yellow]No skills currently linked.[/]");
-            AnsiConsole.Ask<string>("Press [Enter] to continue...");
+            AnsiConsole.Ask<string>("Press [[Enter]] to continue...");
             return;
         }
 
@@ -145,7 +145,7 @@ public class SkillTui
         }
 
         await Task.CompletedTask;
-        AnsiConsole.Ask<string>("Press [Enter] to continue...");
+        AnsiConsole.Ask<string>("Press [[Enter]] to continue...");
     }
 
     private void ShowConfiguration()
@@ -160,6 +160,6 @@ public class SkillTui
         table.AddRow("OpenCode Skills Path", config.OpencodeSkillsPath);
 
         AnsiConsole.Write(table);
-        AnsiConsole.Ask<string>("Press [Enter] to continue...");
+        AnsiConsole.Ask<string>("Press [[Enter]] to continue...");
     }
 }
