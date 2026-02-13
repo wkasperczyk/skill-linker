@@ -86,7 +86,7 @@ public class SkillTui
         return Task.CompletedTask;
     }
 
-    private async Task EnableSkillAsync(List<Skill> skills)
+    private Task EnableSkillAsync(List<Skill> skills)
     {
         var unlinkedSkills = skills.Where(s => !s.IsLinked).ToList();
 
@@ -94,7 +94,7 @@ public class SkillTui
         {
             AnsiConsole.MarkupLine("[yellow]No skills available to enable.[/]");
             AnsiConsole.Ask<string>("Press [[Enter]] to continue...");
-            return;
+            return Task.CompletedTask;
         }
 
         var skillName = AnsiConsole.Prompt(
@@ -113,11 +113,11 @@ public class SkillTui
             AnsiConsole.MarkupLine($"[red]Failed to link skill '{skillName}'[/]");
         }
 
-        await Task.CompletedTask;
         AnsiConsole.Ask<string>("Press [[Enter]] to continue...");
+        return Task.CompletedTask;
     }
 
-    private async Task DisableSkillAsync(List<Skill> skills)
+    private Task DisableSkillAsync(List<Skill> skills)
     {
         var linkedSkills = skills.Where(s => s.IsLinked).ToList();
 
@@ -125,7 +125,7 @@ public class SkillTui
         {
             AnsiConsole.MarkupLine("[yellow]No skills currently linked.[/]");
             AnsiConsole.Ask<string>("Press [[Enter]] to continue...");
-            return;
+            return Task.CompletedTask;
         }
 
         var skillName = AnsiConsole.Prompt(
@@ -144,8 +144,8 @@ public class SkillTui
             AnsiConsole.MarkupLine($"[red]Failed to unlink skill '{skillName}'[/]");
         }
 
-        await Task.CompletedTask;
         AnsiConsole.Ask<string>("Press [[Enter]] to continue...");
+        return Task.CompletedTask;
     }
 
     private void ShowConfiguration()
