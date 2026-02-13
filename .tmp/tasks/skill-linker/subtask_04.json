@@ -1,0 +1,26 @@
+{
+  "id": "skill-linker-04",
+  "seq": "04",
+  "title": "Implement SkillRepositoryService",
+  "status": "pending",
+  "depends_on": ["03"],
+  "parallel": false,
+  "context_files": [
+    ".opencode/context/core/standards/code-quality.md"
+  ],
+  "reference_files": [],
+  "suggested_agent": "CoderAgent",
+  "agent_id": null,
+  "acceptance_criteria": [
+    "Scans skills directory for skill folders",
+    "Detects existing symbolic links in .opencode/skills",
+    "Returns list of Skill objects with metadata",
+    "Identifies which skills are currently linked"
+  ],
+  "deliverables": [
+    "Services/SkillRepositoryService.cs"
+  ],
+  "started_at": null,
+  "completed_at": null,
+  "completion_summary": null
+}

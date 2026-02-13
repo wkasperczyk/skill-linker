@@ -1,0 +1,28 @@
+{
+  "id": "skill-linker-02",
+  "seq": "02",
+  "title": "Implement Core domain models",
+  "status": "pending",
+  "depends_on": ["01"],
+  "parallel": false,
+  "context_files": [
+    ".opencode/context/core/standards/code-quality.md"
+  ],
+  "reference_files": [],
+  "suggested_agent": "CoderAgent",
+  "agent_id": null,
+  "acceptance_criteria": [
+    "Skill model with Name, Description, Path properties",
+    "SkillLink model with Source, Target, IsEnabled properties",
+    "Configuration model with RepositoryPath, OpencodePath properties",
+    "Models are immutable/record types"
+  ],
+  "deliverables": [
+    "Domain/Models/Skill.cs",
+    "Domain/Models/SkillLink.cs",
+    "Domain/Models/Configuration.cs"
+  ],
+  "started_at": null,
+  "completed_at": null,
+  "completion_summary": null
+}

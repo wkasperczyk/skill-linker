@@ -1,0 +1,26 @@
+{
+  "id": "skill-linker-08",
+  "seq": "08",
+  "title": "Create bash integration script",
+  "status": "pending",
+  "depends_on": ["06"],
+  "parallel": true,
+  "context_files": [
+    ".opencode/context/core/standards/code-quality.md"
+  ],
+  "reference_files": [],
+  "suggested_agent": "CoderAgent",
+  "agent_id": null,
+  "acceptance_criteria": [
+    "skill-linker script in PATH after install",
+    "Commands: sl-list, sl-enable, sl-disable, sl-config",
+    "Shows help with --help flag",
+    "Handles errors with exit codes"
+  ],
+  "deliverables": [
+    "scripts/skill-linker.sh"
+  ],
+  "started_at": null,
+  "completed_at": null,
+  "completion_summary": null
+}

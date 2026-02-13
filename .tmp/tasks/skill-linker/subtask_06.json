@@ -1,0 +1,30 @@
+{
+  "id": "skill-linker-06",
+  "seq": "06",
+  "title": "Implement CLI commands",
+  "status": "pending",
+  "depends_on": ["05"],
+  "parallel": false,
+  "context_files": [
+    ".opencode/context/core/standards/code-quality.md"
+  ],
+  "reference_files": [],
+  "suggested_agent": "CoderAgent",
+  "agent_id": null,
+  "acceptance_criteria": [
+    "list command: shows all skills with link status",
+    "enable command: creates symlink for named skill",
+    "disable command: removes symlink for named skill",
+    "config command: shows/sets repository path",
+    "Spectre.Console AnsiConsole used for output"
+  ],
+  "deliverables": [
+    "Commands/ListCommand.cs",
+    "Commands/EnableCommand.cs",
+    "Commands/DisableCommand.cs",
+    "Commands/ConfigCommand.cs"
+  ],
+  "started_at": null,
+  "completed_at": null,
+  "completion_summary": null
+}

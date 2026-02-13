@@ -1,0 +1,26 @@
+{
+  "id": "skill-linker-07",
+  "seq": "07",
+  "title": "Implement TUI interface",
+  "status": "pending",
+  "depends_on": ["06"],
+  "parallel": false,
+  "context_files": [
+    ".opencode/context/core/standards/code-quality.md"
+  ],
+  "reference_files": [],
+  "suggested_agent": "OpenFrontendSpecialist",
+  "agent_id": null,
+  "acceptance_criteria": [
+    "Interactive skill browser with selection",
+    "Shows skill list with status (linked/unlinked)",
+    "Enable/disable skills via keyboard",
+    "Color-coded status indicators"
+  ],
+  "deliverables": [
+    "Tui/SkillTui.cs"
+  ],
+  "started_at": null,
+  "completed_at": null,
+  "completion_summary": null
+}

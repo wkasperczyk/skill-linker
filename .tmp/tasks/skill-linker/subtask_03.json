@@ -1,0 +1,26 @@
+{
+  "id": "skill-linker-03",
+  "seq": "03",
+  "title": "Implement ConfigurationService",
+  "status": "pending",
+  "depends_on": ["02"],
+  "parallel": false,
+  "context_files": [
+    ".opencode/context/core/standards/code-quality.md"
+  ],
+  "reference_files": [],
+  "suggested_agent": "CoderAgent",
+  "agent_id": null,
+  "acceptance_criteria": [
+    "ConfigurationService loads config from ~/.config/skill-linker/config.json",
+    "Default repository path: ~/.config/skill-linker/skills",
+    "Opencode path defaults to ~/.opencode/skills",
+    "Configuration persists on changes"
+  ],
+  "deliverables": [
+    "Services/ConfigurationService.cs"
+  ],
+  "started_at": null,
+  "completed_at": null,
+  "completion_summary": null
+}

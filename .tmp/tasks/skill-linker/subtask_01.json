@@ -1,0 +1,28 @@
+{
+  "id": "skill-linker-01",
+  "seq": "01",
+  "title": "Create .NET Core project with Spectre.Console",
+  "status": "pending",
+  "depends_on": [],
+  "parallel": false,
+  "context_files": [
+    ".opencode/context/core/standards/code-quality.md"
+  ],
+  "reference_files": [],
+  "suggested_agent": "CoderAgent",
+  "agent_id": null,
+  "acceptance_criteria": [
+    ".NET Core project created with dotnet CLI",
+    "Spectre.Console NuGet package installed",
+    "Project builds without errors",
+    "Basic project structure created"
+  ],
+  "deliverables": [
+    "SkillLinker.csproj",
+    "Program.cs entry point",
+    "Project builds successfully"
+  ],
+  "started_at": null,
+  "completed_at": null,
+  "completion_summary": null
+}

@@ -1,0 +1,27 @@
+{
+  "id": "skill-linker-09",
+  "seq": "09",
+  "title": "Write unit tests",
+  "status": "pending",
+  "depends_on": ["02", "03", "04", "05"],
+  "parallel": true,
+  "context_files": [
+    ".opencode/context/core/standards/code-quality.md",
+    ".opencode/context/core/standards/test-coverage.md"
+  ],
+  "reference_files": [],
+  "suggested_agent": "TestEngineer",
+  "agent_id": null,
+  "acceptance_criteria": [
+    "ConfigurationService tests: load, save, defaults",
+    "SkillRepositoryService tests: scan, detect links",
+    "LinkManager tests: create, remove symlinks",
+    "Tests use xUnit or NUnit framework"
+  ],
+  "deliverables": [
+    "Tests/SkillLinker.Tests/"
+  ],
+  "started_at": null,
+  "completed_at": null,
+  "completion_summary": null
+}

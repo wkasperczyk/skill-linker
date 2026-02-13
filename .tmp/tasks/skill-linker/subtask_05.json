@@ -1,0 +1,26 @@
+{
+  "id": "skill-linker-05",
+  "seq": "05",
+  "title": "Implement LinkManager",
+  "status": "pending",
+  "depends_on": ["04"],
+  "parallel": false,
+  "context_files": [
+    ".opencode/context/core/standards/code-quality.md"
+  ],
+  "reference_files": [],
+  "suggested_agent": "CoderAgent",
+  "agent_id": null,
+  "acceptance_criteria": [
+    "Creates symbolic links from skill to .opencode/skills",
+    "Removes symbolic links (disable skill)",
+    "Validates source path exists before linking",
+    "Handles errors gracefully"
+  ],
+  "deliverables": [
+    "Services/LinkManager.cs"
+  ],
+  "started_at": null,
+  "completed_at": null,
+  "completion_summary": null
+}
