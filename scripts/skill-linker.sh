@@ -6,7 +6,7 @@ set -e
 
 # Get the directory where this script is located (go up to project root)
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-SKILL_LINKER_DLL="$SCRIPT_DIR/SkillLinker/bin/Debug/net10.0/SkillLinker.dll"
+SKILL_LINKER_DLL="$SCRIPT_DIR/SkillLinker/bin/Release/net10.0/SkillLinker.dll"
 
 # Find dotnet
 if ! command -v dotnet &> /dev/null; then
@@ -14,11 +14,10 @@ if ! command -v dotnet &> /dev/null; then
     exit 1
 fi
 
-# Check if the DLL exists
+# Check if the DLL exists, build if not
 if [ ! -f "$SKILL_LINKER_DLL" ]; then
-    echo "Error: SkillLinker.dll not found. Please build the project first:" >&2
-    echo "  cd SkillLinker && dotnet build" >&2
-    exit 1
+    echo "SkillLinker.dll not found. Building release..." >&2
+    dotnet build "$SCRIPT_DIR/SkillLinker/SkillLinker.csproj" -c Release
 fi
 
 # Function to display help
@@ -54,7 +53,7 @@ shift || true
 
 case "$COMMAND" in
     list)
-        dotnet run --project "$SCRIPT_DIR/SkillLinker/SkillLinker.csproj" -- list "$@"
+        dotnet "$SKILL_LINKER_DLL" list "$@"
         ;;
     enable)
         if [ -z "$1" ]; then
@@ -62,7 +61,7 @@ case "$COMMAND" in
             echo "Usage: skill-linker enable <name>" >&2
             exit 1
         fi
-        dotnet run --project "$SCRIPT_DIR/SkillLinker/SkillLinker.csproj" -- enable "$@"
+        dotnet "$SKILL_LINKER_DLL" enable "$@"
         ;;
     disable)
         if [ -z "$1" ]; then
@@ -70,20 +69,20 @@ case "$COMMAND" in
             echo "Usage: skill-linker disable <name>" >&2
             exit 1
         fi
-        dotnet run --project "$SCRIPT_DIR/SkillLinker/SkillLinker.csproj" -- disable "$@"
+        dotnet "$SKILL_LINKER_DLL" disable "$@"
         ;;
     config)
-        dotnet run --project "$SCRIPT_DIR/SkillLinker/SkillLinker.csproj" -- config "$@"
+        dotnet "$SKILL_LINKER_DLL" config "$@"
         ;;
     tui)
-        dotnet run --project "$SCRIPT_DIR/SkillLinker/SkillLinker.csproj" -- tui "$@"
+        dotnet "$SKILL_LINKER_DLL" tui "$@"
         ;;
     help|--help|-h)
         show_help
         ;;
     "")
         # No command - launch TUI by default
-        dotnet run --project "$SCRIPT_DIR/SkillLinker/SkillLinker.csproj" -- tui "$@"
+        dotnet "$SKILL_LINKER_DLL" tui "$@"
         ;;
     *)
         echo "Unknown command: $COMMAND" >&2
